@@ -1,0 +1,28 @@
+.MenuItem {
+    font-size: 20px;
+    float: right;
+    margin: 0 20px 0 0;
+    text-decoration: none;
+    color: white;
+    box-sizing: border-box;
+    display: block;
+}
+
+.menuImage {
+    width: 30px;
+    height: 30px;
+}
+
+.MenuItem a{
+    color: #323232;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.MenuItem a:hover,
+.MenuItem a:active,
+.MenuItem a.active {
+    cursor: pointer;
+}

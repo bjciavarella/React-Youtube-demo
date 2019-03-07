@@ -1,0 +1,27 @@
+.Header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #FFFFFF;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: #32323229 0 2px 20px;
+    z-index: 15;
+}
+
+.Logo {
+    position: absolute;
+    left: 70px;
+    top: 5px;
+    width: 60px;
+}
+
+.Hamburger {
+    width: 50px;
+    margin: 10px;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}

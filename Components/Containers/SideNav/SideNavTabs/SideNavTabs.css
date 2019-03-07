@@ -1,0 +1,13 @@
+
+.Title {
+    font-family: sans-serif;
+    color: #111111cc;
+    font-weight: bold;
+    letter-spacing: .007px;
+    padding-left: 25px;
+    font-size: 14px;
+}
+
+.SideNavTabs {
+    color: black;
+}

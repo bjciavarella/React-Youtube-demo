@@ -1,0 +1,26 @@
+
+.SideNavTab a {
+    width: 100%;
+    padding: 12px 0 12px 25px;
+    text-decoration: none;
+    color: #111111cc;
+    box-sizing: border-box;
+    display: block;
+    font-size: 12px;
+}
+
+.SideNavTab {
+    list-style-type: none;
+}
+
+.SideNavTab a:hover,
+.SideNavTab a:active,
+.SideNavTab a.active {
+    background-color: #0000001a;
+}
+
+.primaryLink {
+    font-size: 14px;
+    font-weight: bold;
+}
+

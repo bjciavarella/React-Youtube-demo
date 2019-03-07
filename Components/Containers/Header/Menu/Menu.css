@@ -1,0 +1,15 @@
+.Menu {
+    position: absolute;
+    right: 100px;
+    top: 22px;
+    width: 500px;
+}
+
+@media only screen and (max-width: 500px) {
+    .Menu {
+        position: absolute;
+        right: 10px;
+        top: 22px;
+        width: 200px;
+    }
+}

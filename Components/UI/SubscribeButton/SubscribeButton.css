@@ -1,0 +1,14 @@
+
+.SubscribeButton {
+    width: 150px;
+    height: 20px;
+    background-color: #fa3c3e;
+    border-radius: 2px;
+    font-size: 15px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.Subscribers {
+    float: right;
+}

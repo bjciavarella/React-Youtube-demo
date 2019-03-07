@@ -1,0 +1,36 @@
+.MainContent {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    align-items: center;
+    width: 80%;
+    padding: 80px 5% 0 5%;
+    margin: auto;
+    background-color: #FAFAFA;
+}
+
+.SideNavOpen {
+    margin-left: 15%;
+    padding: 80px 0% 0 3%;
+}
+
+@media (min-width: 2000px) {
+    .SideNavOpen {
+        margin-left: 11%;
+    }
+}
+
+
+@media (max-width: 1400px) {
+    .MainContent {
+        width: 90%;
+        margin: 0 2%;
+    }
+
+    .SideNavOpen {
+        margin-left: 2%;
+    }
+}
