@@ -9,6 +9,8 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import Channel from "./Components/Pages/Channel/Channel";
 import Settings from "./Components/Pages/User/Settings/Settings";
 import HomePage from "./Components/Pages/HomePage/HomePage";
+import axios from 'axios';
+
 
 class App extends Component {
 
@@ -29,6 +31,7 @@ class App extends Component {
             }
         )
     };
+
 
     componentDidMount() {
         this.checkWindowSize();
@@ -90,7 +93,10 @@ class App extends Component {
           <Switch>
               <Route
                   path={"/channel"}
-                  render={() => <Channel channel={this.state.channel} validateAndGetFormattedChannelName={this.validateAndGetFormattedChannelName}/>}
+                  render={() => <Channel
+                                    channel={this.state.channel}
+                                    validateAndGetFormattedChannelName={this.validateAndGetFormattedChannelName}/>}
+
               />
               <Route
                   path={"/settings"}

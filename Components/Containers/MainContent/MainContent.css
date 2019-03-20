@@ -19,7 +19,7 @@
 
 @media (min-width: 2000px) {
     .SideNavOpen {
-        margin-left: 11%;
+        margin-left: 12%;
     }
 }
 
@@ -27,7 +27,6 @@
 @media (max-width: 1400px) {
     .MainContent {
         width: 90%;
-        margin: 0 2%;
     }
 
     .SideNavOpen {

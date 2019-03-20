@@ -12,10 +12,10 @@ const VideoElement = (props) => {
                     image={videoThumbnail}
                 />
                 <VideoProperties
-                    videoTitle={"The Video Title is very long this time so we can test wrap around"}
+                    videoTitle={props.videoTitle}
                     channel={props.channel}
-                    postDate={"1/23/4567"}
-                    viewCount={12345}
+                    postDate={props.postDate}
+                    viewCount={props.viewCount}
                 />
             </div>
         );

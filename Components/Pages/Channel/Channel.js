@@ -3,13 +3,17 @@ import classes from './Channel.css';
 import {Route, Switch, withRouter} from "react-router-dom";
 import VideoElement from "../../Containers/VideoElement/VideoElement";
 import SubscribeButton from "../../UI/SubscribeButton/SubscribeButton";
+import axios from "axios";
 
 class Channel extends Component {
+
+    componentDidMount() {
+        // this.props.makeRequestForChannelData(this.props.location.pathname.substring(1, this.props.location.pathname.length).split("/")[1]);
+    }
 
     render() {
         let path = this.props.location.pathname.substring(1, this.props.location.pathname.length);
         let channelName = path.split("/")[1];
-
         let routes = null;
         let channelNameFormatted = this.props.validateAndGetFormattedChannelName(channelName);
         if(channelNameFormatted) {
@@ -31,80 +35,36 @@ class Channel extends Component {
         )
     }
 
-    getChannelData = (channelName, channelNameFormatted) => {
-        let channelData = '';
-        this.channelInfo.forEach(function(channel) {
-            if (channel.name === channelName) {
-                channelData = channel;
+    makeRequestForChannelData(channelName) {
+        return axios.get('http://localhost:9000/channel/' + channelName)
+            .then(response =>  {
+                return response.data
+            });
+    }
 
-            }
+    getChannelData = (channelName, channelNameFormatted) => {
+        let channelData = this.makeRequestForChannelData(channelName).then(data => {
+            console.log(data)
         });
 
         return(
             <div>
                 <h1> {channelNameFormatted} </h1>
-                <p> {channelData.subscriberCount} subscribers</p>
+                {/*<p> {channelData.subscribers} subscribers</p>*/}
                 <br/>
                 <div className={classes.Subscribe}>
-                    <SubscribeButton subscriberCount={channelData.subscriberCount}/>
+                    {/*<SubscribeButton subscriberCount={channelData.subscriberCount}/>*/}
                 </div>
                 <hr/>
                 <br/>
                 <div className={classes.VideosContainer} >
-                    <VideoElement/>
-                    <VideoElement/>
-                    <VideoElement/>
-                    <VideoElement/>
-                    <VideoElement/>
+                    {/*<VideoElement/>*/}
                 </div>
                 <hr/>
             </div>
         );
     };
-
-    channelInfo = [
-        {
-            name: 'nigahiga',
-            subscriberCount: 21800024
-        },
-        {
-            name: 'etcg1',
-            subscriberCount: 200323
-        },
-        {
-            name: 'jerryrigeverything',
-            subscriberCount: 1800024
-        },
-        {
-            name: 'paulshardware',
-            subscriberCount: 3800024
-        },
-        {
-            name: 'thebackyardscientist',
-            subscriberCount: 400024
-        },
-        {
-            name: 'linustechtips',
-            subscriberCount: 680064
-        },
-        {
-            name: 'node',
-            subscriberCount: 13024
-        },
-        {
-            name: 'demolitionranch',
-            subscriberCount: 8024535
-        },
-        {
-            name: 'jayztwocents',
-            subscriberCount: 24
-        },
-        {
-            name: 'bitwit',
-            subscriberCount: 235
-        },
-    ];
-
 }
+
 
 export default withRouter(Channel);
