@@ -69,7 +69,7 @@ class VideoRow extends Component {
     ];
 
     render() {
-        let contentHeading = 'Recommended';
+        let contentHeading = '';
 
         if(this.props.contentHeading) {
             contentHeading = this.props.contentHeading;
@@ -80,19 +80,20 @@ class VideoRow extends Component {
             <div className={classes.VideoRow}>
                 <h3 className={classes.RowTitle}>{contentHeading}</h3>
                     {this.videoArray.map((videoProps, index) => {
-                        return (
-                            <div
-                                className={classes.VideoContainer}
-                                key={index}
-                            >
-                                <VideoElement
-                                    videoTitle={videoProps.videoTitle}
-                                    channel={videoProps.channel}
-                                    postDate={videoProps.postDate}
-                                    viewCount={videoProps.viewCount}
-                                />
-                            </div>
-                        )
+                            if(index < this.props.videosPerRow) {
+                                return <div
+                                    className={classes.VideoContainer}
+                                    key={index}
+                                >
+                                    <VideoElement
+                                        videoTitle={videoProps.videoTitle}
+                                        channel={videoProps.channel}
+                                        postDate={videoProps.postDate}
+                                        viewCount={videoProps.viewCount}
+                                    />
+                                </div>
+                            }
+                            return null
                     })}
                 <hr/>
             </div>
@@ -100,4 +101,4 @@ class VideoRow extends Component {
     }
 }
 
-export default VideoRow
+export default VideoRow;

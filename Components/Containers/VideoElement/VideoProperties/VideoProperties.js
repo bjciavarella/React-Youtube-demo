@@ -15,7 +15,7 @@ const VideoProperties = (props) => {
 
             {props.channel ?
                 <NavLink
-                    to={"/channel/" + props.channel.replace(/\s/g, "").toLowerCase()}
+                    to={"/channel/" + props.channel.replace(/[^\w]/gi, '').toLowerCase()}
                     className={classes.PropertyRow + " " + classes.spacer}
                 >
                     {props.channel}

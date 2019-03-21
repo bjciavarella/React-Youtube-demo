@@ -103,8 +103,10 @@ class App extends Component {
               <Route
                   exact
                   path={"/"}
-                  render={() => <HomePage user={this.state.user}/>}
-              />
+                  render={() => <HomePage
+                                    width={this.state.width}
+                                    user={this.state.user}/>}
+                                />
               <Redirect to={"/"}/>
           </Switch>
       );

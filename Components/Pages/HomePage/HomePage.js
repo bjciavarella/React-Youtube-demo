@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import classes from './HomePage.css';
-import VideoElement from "../../Containers/VideoElement/VideoElement";
 import VideoRow from "../../Containers/VideoRow/VideoRow";
 
 class HomePage extends Component {
-
 
     videoArray = [
         {
@@ -54,11 +51,16 @@ class HomePage extends Component {
 
 
     render() {
+        let videosPerRow = 6;
+
+        if(this.props.width <=  1500) {
+            videosPerRow = (this.props.width / 285).toFixed(0)
+        }
 
         return (
             <div>
-                <VideoRow/>
-                <VideoRow contentHeading={"Linus Tech Tips"}/>
+                <VideoRow  videosPerRow={videosPerRow} contentHeading={"Recommended"}/>
+                <VideoRow  videosPerRow={videosPerRow} contentHeading={"Linus Tech Tips"}/>
             </div>
         );
     }

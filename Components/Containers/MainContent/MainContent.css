@@ -6,21 +6,28 @@
     bottom: 0;
     height: 100%;
     align-items: center;
-    width: 80%;
+    width: 95%;
     padding: 80px 5% 0 5%;
     margin: auto;
     background-color: #FAFAFA;
 }
 
 .SideNavOpen {
-    margin-left: 240px;
+    margin-left: 15%;
     padding: 80px 0% 0 3%;
-    width: 82%;
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1500px) {
+    .MainContent {
+        width: 75%;
+    }
+
     .SideNavOpen {
-        margin-left: 12%;
+        margin-left: 15%;
+    }
+
+    .SideNavClosed {
+        margin-left: 10%;
     }
 }
 
