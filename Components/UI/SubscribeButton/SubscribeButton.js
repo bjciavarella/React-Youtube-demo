@@ -4,7 +4,6 @@ import classes from './SubscribeButton.css';
 const SubscribeButton = (props) => {
     let subscriberCount = props.subscriberCount;
 
-
     if(subscriberCount > 1000 && subscriberCount < 1000000) {
         subscriberCount = (Math.round(subscriberCount) / 1000).toFixed(0) + 'K'
     }

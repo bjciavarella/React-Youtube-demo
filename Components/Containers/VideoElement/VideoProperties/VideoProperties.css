@@ -1,14 +1,12 @@
 
 .VideoProperties {
-    width: 236px;
-    margin: 7px;
-    height: 27%;
+    height: 70px;
+    display: table-cell;
 }
 
 .VideoTitle {
     color: black;
     font-size: 14px;
-    margin: 0 0 6px 0;
     font-weight: bold;
     text-decoration: none;
 }
@@ -16,7 +14,11 @@
 .PropertyRow {
     color: black;
     font-size: 11px;
-    margin: 0 0 2px 0;
+    margin: 2px 0 0px 0;
     text-decoration: none;
-    display: inherit;
+    display: grid;
+}
+
+.spacer {
+    margin-top: 8px;
 }

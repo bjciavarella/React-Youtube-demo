@@ -16,12 +16,12 @@ const VideoProperties = (props) => {
             {props.channel ?
                 <NavLink
                     to={"/channel/" + props.channel.replace(/\s/g, "").toLowerCase()}
-                    className={classes.PropertyRow}
+                    className={classes.PropertyRow + " " + classes.spacer}
                 >
                     {props.channel}
                 </NavLink>
                 :
-                <p></p>
+                null
             }
             <p className={classes.PropertyRow}>
                 {props.viewCount} Views | {props.postDate}

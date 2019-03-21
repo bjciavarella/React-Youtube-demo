@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './HomePage.css';
 import VideoElement from "../../Containers/VideoElement/VideoElement";
+import VideoRow from "../../Containers/VideoRow/VideoRow";
 
 class HomePage extends Component {
 
@@ -13,7 +14,7 @@ class HomePage extends Component {
             viewCount: '24352'
         },
         {
-            videoTitle: 'New AMD CPU',
+            videoTitle: 'New AMD CPU Ryzen 2700 vs Intel',
             channel: 'JayzTwoCents',
             postDate: '2/4/2019',
             viewCount: '9353535'
@@ -55,21 +56,14 @@ class HomePage extends Component {
     render() {
 
         return (
-            <div className={classes.HomePage}>
-                {this.videoArray.map((videoProps) => {
-                    return (
-                        <VideoElement
-                            videoTitle={videoProps.videoTitle}
-                            channel={videoProps.channel}
-                            postDate={videoProps.postDate}
-                            viewCount={videoProps.viewCount}
-                        />
-                    )
-                })}
-
+            <div>
+                <VideoRow/>
+                <VideoRow contentHeading={"Linus Tech Tips"}/>
             </div>
         );
     }
 }
 
 export default HomePage;
+
+

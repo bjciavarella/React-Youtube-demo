@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import classes from './Channel.css';
 import {Route, Switch, withRouter} from "react-router-dom";
-import VideoElement from "../../Containers/VideoElement/VideoElement";
-import SubscribeButton from "../../UI/SubscribeButton/SubscribeButton";
-import axios from "axios";
+import ChannelData from "../../Containers/ChannelData/ChannelData";
 
 class Channel extends Component {
 
     componentDidMount() {
-        // this.props.makeRequestForChannelData(this.props.location.pathname.substring(1, this.props.location.pathname.length).split("/")[1]);
+        // console.log(this.makeRequestForChannelData(this.props.location.pathname.substring(1, this.props.location.pathname.length).split("/")[1]));
     }
 
     render() {
@@ -22,7 +20,7 @@ class Channel extends Component {
                     <Switch>
                         <Route
                             path={"/channel/" + channelName}
-                            render={() => this.getChannelData(channelName, channelNameFormatted)}
+                            render={() => <ChannelData channelNameFormatted={channelNameFormatted} channelName={channelName}/>}
                         />
                     </Switch>
                 </div>
@@ -34,36 +32,6 @@ class Channel extends Component {
             </div>
         )
     }
-
-    makeRequestForChannelData(channelName) {
-        return axios.get('http://localhost:9000/channel/' + channelName)
-            .then(response =>  {
-                return response.data
-            });
-    }
-
-    getChannelData = (channelName, channelNameFormatted) => {
-        let channelData = this.makeRequestForChannelData(channelName).then(data => {
-            console.log(data)
-        });
-
-        return(
-            <div>
-                <h1> {channelNameFormatted} </h1>
-                {/*<p> {channelData.subscribers} subscribers</p>*/}
-                <br/>
-                <div className={classes.Subscribe}>
-                    {/*<SubscribeButton subscriberCount={channelData.subscriberCount}/>*/}
-                </div>
-                <hr/>
-                <br/>
-                <div className={classes.VideosContainer} >
-                    {/*<VideoElement/>*/}
-                </div>
-                <hr/>
-            </div>
-        );
-    };
 }
 
 

@@ -7,6 +7,7 @@
 .ThumbnailContainer {
     width: 100%;
     height: 168px;
+    margin-bottom: 8px;
 }
 
 @media only screen and (max-width: 500px) {

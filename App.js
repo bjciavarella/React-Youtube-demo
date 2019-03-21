@@ -9,8 +9,6 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import Channel from "./Components/Pages/Channel/Channel";
 import Settings from "./Components/Pages/User/Settings/Settings";
 import HomePage from "./Components/Pages/HomePage/HomePage";
-import axios from 'axios';
-
 
 class App extends Component {
 
